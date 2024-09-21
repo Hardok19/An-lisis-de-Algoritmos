@@ -1,6 +1,3 @@
-//
-// Created by harold-madriz on 20/09/24.
-//
 
 #include "Sorter.h"
 
@@ -43,7 +40,7 @@ void Sorter::SelectionSort(Lista& lista) {
         Node* min = temp;
         Node* r = temp->next;
 
-        // Encontrar el nodo con el valor mínimo en la sublista no ordenada
+
         while (r != nullptr) {
             if (r->dato < min->dato) {
                 min = r;

@@ -1,6 +1,4 @@
-//
-// Created by harold-madriz on 20/09/24.
-//
+
 
 #ifndef SORTER_H
 #define SORTER_H
@@ -59,7 +57,7 @@ public:
         return result;
     }
 
-    // Función para obtener el nodo del medio de la lista
+
     Node* getMiddle(Node* head) {
         if (!head) {
             return head;

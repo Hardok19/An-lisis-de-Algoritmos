@@ -5,12 +5,14 @@
 #include <iostream>
 #include "Lista.h"
 #include "Sorter.h"
+#include "BinarySearchTree.h"
 
 
 
 #ifndef PEORCASO_H
 #define PEORCASO_H
-void peorcasoBubbleSort() {
+
+double peorcasoBubbleSort() {
     Sorter sorter;
     Lista lista;
 
@@ -30,9 +32,10 @@ void peorcasoBubbleSort() {
 
     // Imprimir el tiempo de ejecución
     std::cout << "Tiempo de ejecución para peorcasoBubblesort (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
-void peorcasoSelectionSort() {
+double peorcasoSelectionSort() {
     Sorter sorter;
     Lista lista;
 
@@ -47,9 +50,10 @@ void peorcasoSelectionSort() {
 
 
     std::cout << "Tiempo de ejecución para peorcasoSelectionSort (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
-void peorcasoMergeSort() {
+double peorcasoMergeSort() {
     Sorter sorter;
     Lista lista;
 
@@ -64,18 +68,19 @@ void peorcasoMergeSort() {
 
 
     std::cout << "Tiempo de ejecución para peorcasoMergeSort (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
 
 
 
 
-void peorcasoLinkedListSearch() {
+double peorcasoLinkedListSearch() {
     Lista lista;
 
     // Insertar elementos en la lista ordenada
     for (int i = 1; i <= 100; ++i) {
-        lista.InsertinO(i); // Asumiendo que Insert mantiene la lista ordenada
+        lista.InsertinO(i);
     }
 
     int elementoBuscado = 101;
@@ -87,9 +92,10 @@ void peorcasoLinkedListSearch() {
 
     std::cout << "Peor caso All Sorted LinkedList Search (Elemento no encontrado) " ;
     std::cout << "Tiempo de ejecución (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
-void peorcasoBSTInsert() {
+double peorcasoBSTInsert() {
     BinarySearchTree bst;
 
     for (int i = 1; i <= 100; ++i) {
@@ -106,6 +112,7 @@ void peorcasoBSTInsert() {
     std::chrono::duration<double, std::nano> duration = end - start;
 
     std::cout << "Tiempo de ejecución Peorcaso BSTInsert (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
 

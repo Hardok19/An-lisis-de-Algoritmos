@@ -12,7 +12,7 @@
 void Lista::Insert(int dato) {
     Node *newNode = new Node(dato);
     if (head == nullptr) {
-        head = newNode;  // Si la lista está vacía, el nuevo nodo se convierte en la cabeza
+        head = newNode;
     } else {
         Node *curr = head;
         while (curr->next != nullptr) {

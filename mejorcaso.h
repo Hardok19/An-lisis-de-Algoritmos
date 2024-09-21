@@ -3,7 +3,7 @@
 //
 #include <chrono>
 #include <iostream>
-
+#include "BinarySearchTree.h"
 #include "Lista.h"
 #include "Sorter.h"
 
@@ -14,7 +14,7 @@
 
 
 
-void mejorBubbleSort() {
+double mejorBubbleSort() {
     Sorter sorter;
     Lista lista;
 
@@ -34,9 +34,11 @@ void mejorBubbleSort() {
 
     // Imprimir el tiempo de ejecución
     std::cout << "Tiempo de ejecución para Mejorcaso Bubblesort (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
+
 }
 
-void mejorSelectionSort() {
+double mejorSelectionSort() {
     Sorter sorter;
     Lista lista;
 
@@ -51,9 +53,10 @@ void mejorSelectionSort() {
 
 
     std::cout << "Tiempo de ejecución para Mejorcaso SelectionSort (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
-void mejorMergeSort() {
+double mejorMergeSort() {
     Sorter sorter;
     Lista lista;
 
@@ -68,10 +71,11 @@ void mejorMergeSort() {
 
 
     std::cout << "Tiempo de ejecución para Mejorcaso MergeSort (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
 
-void mejorLinkedListSearch() {
+double mejorLinkedListSearch() {
     Lista lista;
 
     // Insertar elementos en la lista ordenada
@@ -88,10 +92,11 @@ void mejorLinkedListSearch() {
 
     std::cout << "Mejor caso All Sorted LinkedList Search ";
     std::cout << "Tiempo de ejecución (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
 
-void mejorcasoBSTInsert() {
+double mejorcasoBSTInsert() {
     BinarySearchTree bst;
 
     for (int i = 1; i <= 100; ++i) {
@@ -108,6 +113,7 @@ void mejorcasoBSTInsert() {
     std::chrono::duration<double, std::nano> duration = end - start;
 
     std::cout << "Tiempo de ejecución mejorcaso BSTInsert (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
 

@@ -3,7 +3,7 @@
 //
 #include <chrono>
 #include <iostream>
-
+#include "BinarySearchTree.h"
 #include "Lista.h"
 #include "Sorter.h"
 #include <random>
@@ -11,7 +11,7 @@
 #ifndef PROMEDIO_H
 #define PROMEDIO_H
 
-void promedioBubbleSort() {
+double promedioBubbleSort() {
     Sorter sorter;
     Lista lista;
 
@@ -33,15 +33,19 @@ void promedioBubbleSort() {
 
 
     // Imprimir el tiempo de ejecución
-    std::cout << "Tiempo de ejecución para Mejorcaso Bubblesort (nanosegundos): " << duration.count() << std::endl;
+    std::cout << "Tiempo de ejecución para caso Promedio Bubblesort (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
-void promedioSelectionSort() {
+double promedioSelectionSort() {
     Sorter sorter;
     Lista lista;
 
     for (int i = 0; i < 100; ++i) {
-        lista.Insert(i);
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        int random_number = std::uniform_int_distribution<>(1, 100)(gen);
+        lista.Insert(random_number);
     }
 
     auto start = std::chrono::high_resolution_clock::now();
@@ -50,16 +54,22 @@ void promedioSelectionSort() {
     std::chrono::duration<double, std::nano> duration = end - start;
 
 
-    std::cout << "Tiempo de ejecución para Mejorcaso SelectionSort (nanosegundos): " << duration.count() << std::endl;
+    std::cout << "Tiempo de ejecución para caso Promedio SelectionSort (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
-void promedioMergeSort() {
+double promedioMergeSort() {
     Sorter sorter;
     Lista lista;
 
     for (int i = 0; i < 100; ++i) {
-        lista.Insert(i);
+        std::random_device rd;
+        std::mt19937 gen(rd());
+        int random_number = std::uniform_int_distribution<>(1, 100)(gen);
+        lista.Insert(random_number);
+
     }
+
 
     auto start = std::chrono::high_resolution_clock::now();
     sorter.MergeSort(lista);
@@ -67,16 +77,17 @@ void promedioMergeSort() {
     std::chrono::duration<double, std::nano> duration = end - start;
 
 
-    std::cout << "Tiempo de ejecución para promedio MergeSort (nanosegundos): " << duration.count() << std::endl;
+    std::cout << "Tiempo de ejecución para caso Promedio MergeSort (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
 
-void promedioLinkedListSearch() {
+double promedioLinkedListSearch() {
     Lista lista;
 
     // Insertar elementos en la lista ordenada
     for (int i = 1; i <= 100; ++i) {
-        lista.InsertinO(i); // Asumiendo que Insert mantiene la lista ordenada
+        lista.InsertinO(i);
     }
 
     int elementoBuscado = 50;
@@ -88,10 +99,11 @@ void promedioLinkedListSearch() {
 
     std::cout << "Promedio caso All Sorted LinkedList Search ";
     std::cout << "Tiempo de ejecución (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
 
-void promediocasoBSTInsert() {
+double promediocasoBSTInsert() {
     BinarySearchTree bst;
 
     for (int i = 1; i <= 100; ++i) {
@@ -107,7 +119,8 @@ void promediocasoBSTInsert() {
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::nano> duration = end - start;
 
-    std::cout << "Tiempo de ejecución mejorcaso BSTInsert (nanosegundos): " << duration.count() << std::endl;
+    std::cout << "Tiempo de ejecución caso Promedio BSTInsert (nanosegundos): " << duration.count() << std::endl;
+    return duration.count();
 }
 
 

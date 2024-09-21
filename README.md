@@ -6,7 +6,7 @@ ordenamiento.
 ## Requisitos
 
 - **Sistema Operativo**: Linux
-- **Compilador**: [GCC/]
+- **Compilador**: [GCC]
 - **CMake**: [versión mínima VERSION 3.28]
 
 ## Instalación

@@ -16,7 +16,8 @@ ordenamiento.
    git clone https://github.com/Hardok19/An-lisis-de-Algoritmos.git
    cd An-lisis-de-Algoritmos
    
-2.En la terminal
+2.
+
 mkdir build
 cd build
 

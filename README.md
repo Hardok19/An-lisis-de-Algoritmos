@@ -16,19 +16,17 @@ ordenamiento.
    git clone https://github.com/Hardok19/An-lisis-de-Algoritmos.git
    cd An-lisis-de-Algoritmos
    
-2.
-
-mkdir build
+2.mkdir build
 cd build
 
-3.
-cmake ..
+3. cmake ..
 
-4.
-make
+4. make
 
 
-EJECUTAR 
-./untitled
+EJECUTAR  ./untitled
+
+
+
 
 //Cada elección mostrará un resultado 
